@@ -70,6 +70,8 @@ set wildmode=list:full
 autocmd InsertLeave * set nopaste
 set whichwrap=b,s,h,l,<,>,[,]
 set clipboard=unnamed,autoselect 
+set ttyfast
+set lazyredraw
 
 
 "------ Search ------"

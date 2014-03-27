@@ -16,6 +16,7 @@ endif
 set laststatus=2
 set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v,%l)/%L%8P\
 
+
 "------ keymap ------"
 inoremap <C-c> <ESC>
 inoremap <C-h> <left>
@@ -41,6 +42,11 @@ nnoremap <F6> :<C-u>edit $MYVIMRC<Enter>
 nnoremap <F7> :<C-u>source $MYVIMRC<Enter>
                                                                                                                                                                                              
 autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
+
 
 "------ Format ------"
 set smartindent
@@ -75,7 +81,6 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 
-
 "------ NeoBundle ------"
 if has('vim_starting')
   set nocompatible               " Be iMproved
@@ -99,6 +104,9 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'Yggdroot/indentLine'
+let g:indentLine_color_term = 23
+
 NeoBundle 'scrooloose/nerdtree'
 	nmap <silent> <C-e>      :NERDTreeToggle<CR>
 	"vmap <silent> <C-e> <Esc>:NERDTreeToggle<CR>

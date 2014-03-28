@@ -13,19 +13,21 @@ $ vim .vimrc
 $ source .bash_profile .bash_prompt .vimrc
 
 // Create a new repository on the command line
-touch README.md
 
-git init
+$ touch README.md
 
-git add README.md
+$ git init
 
-git commit -m "first commit"
+$ git add README.md
 
-git remote add origin https://github.com/yasainet/dotfile.git
+$ git commit -m "first commit"
 
-git push -u origin master
+$ git remote add origin https://github.com/yasainet/dotfile.git
+
+$ git push -u origin master
 
 // Push an existing repository from the command line
-git remote add origin https://github.com/yasainet/dotfile.git
 
-git push -u origin master
+$ git remote add origin https://github.com/yasainet/dotfile.git
+
+$ git push -u origin master

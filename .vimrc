@@ -9,7 +9,7 @@ if has('unix')
 elseif has('win32')
   set fileformat=dos
   set fileformats=dos,unix,mac
-  set fileencoding=utf-8                                                                                                                                                                   
+  set fileencoding=utf-8
   set fileencodings=iso-2022-jp,utf-8,euc-jp,cp932
   set termencoding=
 endif
@@ -40,7 +40,7 @@ nnoremap gk k
 
 nnoremap <F6> :<C-u>edit $MYVIMRC<Enter>
 nnoremap <F7> :<C-u>source $MYVIMRC<Enter>
-                                                                                                                                                                                             
+
 autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/
 augroup vimrcEx
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -69,10 +69,11 @@ set wildmenu
 set wildmode=list:full
 autocmd InsertLeave * set nopaste
 set whichwrap=b,s,h,l,<,>,[,]
-set clipboard=unnamed,autoselect 
+set clipboard=unnamed,autoselect
 set ttyfast
 set lazyredraw
-
+set list
+set listchars=trail:-
 
 "------ Search ------"
 set incsearch
@@ -110,7 +111,7 @@ NeoBundle 'scrooloose/syntastic'
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 NeoBundle 'Yggdroot/indentLine'
-let g:indentLine_color_term = 23
+let g:indentLine_color_term = 239
 
 NeoBundle 'scrooloose/nerdtree'
 	nmap <silent> <C-e>      :NERDTreeToggle<CR>
@@ -121,6 +122,10 @@ NeoBundle 'scrooloose/nerdtree'
 	autocmd vimenter * if !argc() | NERDTree | endif
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 	let g:NERDTreeShowHidden=1
+
+NeoBundle 'quickrun.vim'
+let g:quickrun_config={'*': {'split': ''}}
+set splitbelow
 
 "------ neocomplete ------"
 NeoBundle 'Shougo/neocomplete.vim'

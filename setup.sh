@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for dotfile in .vim .vimrc .bash_profile .bash_prompt
+for dotfile in .vim .vimrc .zshrc
 do
   rm -fr ~/$dotfile
   #ln -vnfs $PWD/$dotfile ~/$dotfile

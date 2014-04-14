@@ -6,11 +6,13 @@ $ cd dotfiles
 
 $ ./setup.sh
 
+$ git clone https://github.com/carlcarl/powerline-zsh
+
 $ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 $ vim .vimrc
 
-$ source .bash_profile .bash_prompt .vimrc
+$ source .zshrc .vimrc
 
 // Create a new repository on the command line
 

@@ -73,13 +73,4 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# powerline-zsh
-export TERM='xterm-256color'
-function _update_ps1()
-{
-  export PROMPT="$(~/powerline-zsh/powerline-zsh.py $?)"
-}
-precmd()
-{
-  _update_ps1
-}
+source $HOME/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh

@@ -11,10 +11,18 @@ export KCODE=u           # KCODEにUTF-8を設定
 autoload -U compinit; compinit # 補完機能を有効にする
 setopt auto_list               # 補完候補を一覧で表示する(d)
 setopt auto_menu               # 補完キー連打で補完候補を順に表示する(d)
+setopt auto_param_slash        # ディレクトリ名の補完で末尾の / を自動的に付加
+setopt mark_dirs               # ファイル名の展開でディレクトリにマッチした場合 末尾に / を付加
+setopt list_types              # 補完候補一覧でファイルの種別を識別マーク表示 
+setopt complete_in_word        # 語の途中でもカーソル位置で補完
+setopt always_last_prompt      # カーソル位置は保持したままファイル名一覧を順次その場で表示
 setopt list_packed             # 補完候補をできるだけ詰めて表示する
 setopt list_types              # 補完候補にファイルの種類も表示する
+setopt globdots                # 明確なドットの指定なしで.から始まるファイルをマッチ
 bindkey "^[[Z" reverse-menu-complete  # Shift-Tabで補完候補を逆順する("\e[Z"でも動作する)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字小文字を区別しない
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
 
 ### History ###
 HISTFILE=~/.zsh_history   # ヒストリを保存するファイル
@@ -41,8 +49,16 @@ function history-all { history -E 1 }
 # ------------------------------
 
 # dircolors-solarized
-eval $(dircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-universal)
-alias ls='ls -G --color'
+case ${OSTYPE} in
+  darwin*)
+    alias ls='/usr/local/bin/gls --color=auto'
+    eval $(/usr/local/bin/gdircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-universal)
+    ;;
+  linux*)
+    eval $(dircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-universal)
+    alias ls='ls -G --color'
+    ;;
+esac
 
 if [ -n "$LS_COLORS" ]; then
     zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}

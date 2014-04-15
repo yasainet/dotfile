@@ -131,7 +131,6 @@ NeoBundle 'quickrun.vim'
 let g:quickrun_config={'*': {'split': ''}}
 set splitbelow
 
-NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 
 function! s:meet_neocomplete_requirements()
@@ -336,8 +335,8 @@ else
 endif
 
 
-" ------ ColorScheme ------"
+"" ------ ColorScheme ------"
 syntax enable
 set background=dark
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 colorscheme solarized

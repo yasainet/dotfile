@@ -108,6 +108,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 
+NeoBundle 'yuratomo/w3m.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'taichouchou2/html5.vim'

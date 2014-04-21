@@ -75,6 +75,7 @@ set lazyredraw
 set list
 set listchars=trail:-
 set wrap
+set clipboard+=unnamed
 
 "------ Search ------"
 set incsearch

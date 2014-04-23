@@ -49,10 +49,10 @@ function history-all { history -E 1 }
 case ${OSTYPE} in
   darwin*)
     alias ls='/usr/local/bin/gls --color=auto'
-    eval $(/usr/local/bin/gdircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-universal)
+    eval $(/usr/local/bin/gdircolors ~/git/dircolors-solarized/dircolors.ansi-universal)
     ;;
   linux*)
-    eval $(dircolors ~/dotfiles/dircolors-solarized/dircolors.ansi-universal)
+    eval $(dircolors ~/git/dircolors-solarized/dircolors.ansi-universal)
     alias ls='ls -G --color'
     ;;
 esac

@@ -1,5 +1,5 @@
 #Mac
-***
+
 xcode command line tools, homebrewをインストール
 
     $ xcode-select --install
@@ -34,7 +34,12 @@ Ricty for Powerlineをインストール
 
 「ターミナル」→「環境設定」→「設定」→「テキスト」フォント→「Ricty for Powerline Regular　14pt」
 
++luaでvimをインストール
+
     $ brew install vim --with-lua
+
+dotfilesをcloneしてくる
+
     $ git clone https://github.com/yasainet/dotfiles.git ~/dotfiles
     $ cd dotfiles
     $ git submodule init
@@ -45,11 +50,7 @@ Ricty for Powerlineをインストール
 
     $ login
 
-〜おわり〜
-
-
 #ubuntu
-***
 
     $ sudo apt-get update
     $ sudo apt-get install git build-essential gettext
@@ -79,6 +80,8 @@ zshをインストールする
 dircolors-solarized
 
     $ git clone https://github.com/seebi/dircolors-solarized.git ~/git/dircolors-solarized
+
+dotfilesをcloneしてくる
 
     $ git clone https://github.com/yasainet/dotfiles.git ~/dotfiles
     $ cd dotfiles

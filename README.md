@@ -3,7 +3,6 @@
 xcode command line tools, homebrewをインストール
 
     $ xcode-select --install
-
     $ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 
 coreutils, git, zsh, luaをインストール
@@ -15,7 +14,7 @@ coreutils, git, zsh, luaをインストール
     $ git config --global color.ui auto
 
     $ sudo vim /etc/shells
-    /usr/local/bin/zsh
+    // /usr/local/bin/zshを末尾に追加
     $ chpass -s /usr/local/bin/zsh
     $ git clone https://github.com/seebi/dircolors-solarized.git ~/git/dircolors-solarized
 

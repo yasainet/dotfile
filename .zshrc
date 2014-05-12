@@ -61,6 +61,15 @@ if [ -n "$LS_COLORS" ]; then
     zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
+
+
+# ------------------------------
+# Alias
+# ------------------------------
+
+# ls
+alias l="ls -Gla"
+
 # cd->ls
 chpwd() {
     ls_abbrev
@@ -103,10 +112,10 @@ source $HOME/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
 
 case ${OSTYPE} in
     darwin*)
-        #ここにMac向けの設定
+        # for Mac
         export PATH="/usr/local/bin:$PATH"
         ;;
     linux*)
-        #ここにLinux向けの設定
+        # for Linux
         ;;
 esac

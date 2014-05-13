@@ -68,7 +68,7 @@ fi
 # ------------------------------
 
 # ls
-alias l="ls -Gla"
+alias ls="ls -Gla"
 
 # cd->ls
 chpwd() {

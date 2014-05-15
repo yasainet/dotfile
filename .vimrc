@@ -41,6 +41,8 @@ nnoremap gk k
 nnoremap <F6> :<C-u>edit $MYVIMRC<Enter>
 nnoremap <F7> :<C-u>source $MYVIMRC<Enter>
 
+nnoremap <C-g> 1<C-g>
+
 autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/
 augroup vimrcEx
   au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |

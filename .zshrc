@@ -67,9 +67,6 @@ fi
 # Alias
 # ------------------------------
 
-# ls
-alias ls="ls -Gla"
-
 # cd->ls
 chpwd() {
     ls_abbrev

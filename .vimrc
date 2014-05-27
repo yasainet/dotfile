@@ -47,8 +47,7 @@ noremap <C-r> :%s/
 cnoremap <C-r> :%s/
 inoremap <C-r> <ESC>:%s/
 
-map <F10> :set paste<CR>
-imap <F10> <C-O>:set paste<CR>
+set pastetoggle=<F10>
 
 autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/
 augroup vimrcEx

@@ -16,7 +16,6 @@ endif
 set laststatus=2
 set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v,%l)/%L%8P\
 
-
 "------ keymap ------"
 inoremap <C-c> <ESC>
 inoremap <C-b> <left>
@@ -70,7 +69,6 @@ set number
 set scrolloff=999
 set cursorline
 set showcmd
-set laststatus=2
 set backspace=start,eol,indent
 set virtualedit+=block
 set noswapfile

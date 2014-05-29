@@ -19,16 +19,17 @@ set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v
 
 "------ keymap ------"
 inoremap <C-c> <ESC>
-inoremap <C-h> <left>
-inoremap <C-l> <right>
-inoremap <C-k> <up>
-inoremap <C-j> <down>
+inoremap <C-b> <left>
+inoremap <C-f> <right>
+inoremap <C-p> <up>
+inoremap <C-n> <down>
 
-inoremap <C-b> <BS>
+inoremap <C-h> <BS>
 inoremap <C-d> <Del>
 
-inoremap  <C-e> <END>
-inoremap  <C-a> <HOME>
+inoremap <C-e> <END>
+inoremap <C-a> <HOME>
+inoremap <C-k> <ESC><RIGHT>Da
 
 nnoremap j gj
 nnoremap k gk

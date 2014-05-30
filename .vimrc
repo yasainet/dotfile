@@ -246,5 +246,9 @@ set background=dark
 colorscheme solarized
 
 
+<<<<<<< HEAD
 
 "tnk
+=======
+"unk
+>>>>>>> c20e368d0f5591c4cfe2c47d7add4dde2909fa15

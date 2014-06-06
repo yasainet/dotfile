@@ -22,10 +22,8 @@ inoremap <C-b> <left>
 inoremap <C-f> <right>
 inoremap <C-p> <up>
 inoremap <C-n> <down>
-
 inoremap <C-h> <BS>
 inoremap <C-d> <Del>
-
 inoremap <C-e> <END>
 inoremap <C-a> <HOME>
 inoremap <C-k> <ESC><RIGHT>Da
@@ -57,17 +55,29 @@ augroup END
 
 
 "------ Format ------"
-set smartindent
-set autoindent
+" 対応する括弧やブレースを表示する
 set showmatch
+" 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
+set smartindent
+" 改行時に前の行のインデントを継続する
+set autoindent
+" 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする
 set smarttab
+" ファイル内の <Tab> が対応する空白の数
 set tabstop=2
+" シフト移動幅
 set shiftwidth=2
+" Tab入力時半角スペースにする
 set expandtab
+" カーソルが何行目の何列目に置かれているかを表示する
 set ruler
+" 行番号の表示
 set number
+" 常にカーソル行を真ん中に
 set scrolloff=999
+" カレント行をハイライト
 set cursorline
+" 入力中のコマンドを表示する
 set showcmd
 set backspace=start,eol,indent
 set virtualedit+=block
@@ -75,12 +85,10 @@ set noswapfile
 set wildmenu
 set wildmode=list:full
 autocmd InsertLeave * set nopaste
-set whichwrap=b,s,h,l,<,>,[,]
 set clipboard=unnamed,autoselect
 set ttyfast
 set lazyredraw
-set list
-set listchars=trail:-
+" オンのときは、ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
 set wrap
 set clipboard+=unnamed
 function! s:remove_dust()
@@ -244,6 +252,3 @@ syntax enable
 set background=dark
 "let g:solarized_termcolors=256
 colorscheme solarized
-
-
-"unk

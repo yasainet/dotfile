@@ -71,7 +71,7 @@ set shiftwidth=2
 set expandtab
 " カーソルが何行目の何列目に置かれているかを表示する
 set ruler
-" 行番号の表示
+" 行番号の表示する
 set number
 " 常にカーソル行を真ん中に
 set scrolloff=999
@@ -79,18 +79,26 @@ set scrolloff=999
 set cursorline
 " 入力中のコマンドを表示する
 set showcmd
+" Bs で消せるものを指定する
 set backspace=start,eol,indent
+" 矩形選択を空白も選択できる
 set virtualedit+=block
+" swap ファイルを生成しない
 set noswapfile
+" 補完表示
 set wildmenu
+" 補完候補を一覧で表示
 set wildmode=list:full
+" ノーマルモード時にペーストモードを解除する
 autocmd InsertLeave * set nopaste
+" clipboard+ の時に yank でクリップボードにコピー
 set clipboard=unnamed,autoselect
+" ターミナル接続を高速にする
 set ttyfast
+" マクロを実行中は描画を中段する
 set lazyredraw
 " オンのときは、ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
 set wrap
-set clipboard+=unnamed
 function! s:remove_dust()
     let cursor = getpos(".")
     " 保存時に行末の空白を除去する
@@ -103,11 +111,17 @@ endfunction
 autocmd BufWritePre * call <SID>remove_dust()
 
 "------ Search ------"
+" インクリメンタルサーチ
 set incsearch
+" 検索時に大文字小文字を区別しない
 set ignorecase
+" 小文字で検索すると大文字と小文字を無視, 大文字が入ると ignorecase が無効になる
 set smartcase
+" 検索がファイル末尾まで進んだら、ファイル先頭から再び検索する
 set wrapscan
+" 検索結果のハイライト
 set hlsearch
+" EscEsc でハイライトを消す
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 

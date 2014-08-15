@@ -105,6 +105,7 @@ ls_abbrev() {
 }
 
 # powerline
+PATH=$PATH:$HOME/.vim/bundle/powerline/scripts
 source $HOME/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
 
 case ${OSTYPE} in

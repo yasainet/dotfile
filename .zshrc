@@ -104,6 +104,9 @@ ls_abbrev() {
     fi
 }
 
+alias ll='ls -la'
+
+
 # powerline
 PATH=$PATH:$HOME/.vim/bundle/powerline/scripts
 source $HOME/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
@@ -119,3 +122,6 @@ case ${OSTYPE} in
 esac
 
 compdef mosh=ssh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

@@ -41,9 +41,9 @@ nnoremap <F6> :<C-u>source $MYVIMRC<Enter>
 
 nnoremap <C-g> 1<C-g>
 
-noremap <C-r> :%s/
-cnoremap <C-r> :%s/
-inoremap <C-r> <ESC>:%s/
+"noremap <C-r> :%s/
+"cnoremap <C-r> :%s/
+"inoremap <C-r> <ESC>:%s/
 
 set pastetoggle=<F10>
 
@@ -153,6 +153,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'xsbeats/vim-blade'
 " NeoBundle 'scrooloose/syntastic'
 " let g:syntastic_enable_signs=1
 " let g:syntastic_auto_loc_list=2
@@ -207,7 +208,7 @@ inoremap <expr><C-g>     neocomplete#undo_completion()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplete#close_popup() . "\<CR>"
   " For no inserting <CR> key.

@@ -124,6 +124,7 @@ set hlsearch
 " EscEsc でハイライトを消す
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+au BufRead,BufNewFile *.md set filetype=markdown
 
 "------ NeoBundle ------"
 if has('vim_starting')
@@ -134,7 +135,9 @@ if has('vim_starting')
 endif
 
 " Required:
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+call neobundle#end()
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -169,12 +172,15 @@ NeoBundle 'scrooloose/nerdtree'
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
   let g:NERDTreeShowHidden=1
 
-" NeoBundle 'quickrun.vim'
-" let g:quickrun_config={'*': {'split': ''}}
-" set splitbelow
+NeoBundle 'quickrun.vim'
+let g:quickrun_config={'*': {'split': ''}}
+set splitbelow
+
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
 
 NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
-
 "------ neocomplete ------"
 NeoBundle 'Shougo/neocomplete.vim'
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!

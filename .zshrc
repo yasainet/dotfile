@@ -45,23 +45,20 @@ function history-all { history -E 1 }
 # Look And Feel Settings
 # ------------------------------
 
-# dircolors-solarized
-case ${OSTYPE} in
-  darwin*)
-    alias ls='/usr/local/bin/gls --color=auto'
-    eval $(/usr/local/bin/gdircolors ~/git/dircolors-solarized/dircolors.ansi-universal)
-    ;;
-  linux*)
-    eval $(dircolors ~/git/dircolors-solarized/dircolors.ansi-universal)
-    alias ls='ls -G --color'
-    ;;
+case "${OSTYPE}" in
+darwin*)
+  alias ls="ls -G"
+  alias ll="ls -lG"
+  alias la="ls -laG"
+  ;;
+linux*)
+  alias ls='ls --color'
+  alias ll='ls -l --color'
+  alias la='ls -la --color'
+  ;;
 esac
 
-if [ -n "$LS_COLORS" ]; then
-    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-fi
-
-
+PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~ %# "
 
 # ------------------------------
 # Alias
@@ -104,18 +101,4 @@ ls_abbrev() {
     fi
 }
 
-# powerline
-PATH=$PATH:$HOME/.vim/bundle/powerline/scripts
-source $HOME/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
-
-case ${OSTYPE} in
-    darwin*)
-        # for Mac
-        export PATH="/usr/local/bin:$PATH"
-        ;;
-    linux*)
-        # for Linux
-        ;;
-esac
-
-compdef mosh=ssh
+alias ll='ls -la'

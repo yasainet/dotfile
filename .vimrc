@@ -76,7 +76,7 @@ set number
 " 常にカーソル行を真ん中に
 set scrolloff=999
 " カレント行をハイライト
-set cursorline
+" set cursorline
 " 入力中のコマンドを表示する
 set showcmd
 " Bs で消せるものを指定する
@@ -152,13 +152,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " NeoBundle 'flazz/vim-colorschemes'
 
 " NeoBundle 'mattn/benchvimrc-vim'
-NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
-" NeoBundle 'scrooloose/syntastic'
-" let g:syntastic_enable_signs=1
-" let g:syntastic_auto_loc_list=2
+NeoBundle 'vim-javascript'
 NeoBundle 'Yggdroot/indentLine'
 let g:indentLine_color_term = 239
 
@@ -172,15 +170,6 @@ NeoBundle 'scrooloose/nerdtree'
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
   let g:NERDTreeShowHidden=1
 
-NeoBundle 'quickrun.vim'
-let g:quickrun_config={'*': {'split': ''}}
-set splitbelow
-
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-
-NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 "------ neocomplete ------"
 NeoBundle 'Shougo/neocomplete.vim'
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
@@ -213,7 +202,7 @@ inoremap <expr><C-g>     neocomplete#undo_completion()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplete#close_popup() . "\<CR>"
   " For no inserting <CR> key.
@@ -268,7 +257,6 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 "" ------ ColorScheme ------"
-syntax enable
+syntax on
 set background=dark
-"let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme hybrid

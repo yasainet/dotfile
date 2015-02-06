@@ -1,47 +1,101 @@
-#Mac
+## Mac 
 
-xcode command line tools, homebrewをインストール
+* homebrew
+* git
+* zsh
+* Ricty
+* vim
+  * ver 7.4
+  * lua
 
-    $ xcode-select --install
-    $ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 
-coreutils, git, zsh, luaをインストール
+### homebrew
 
-    $ brew install coreutils
-    $ brew install git zsh lua
-    $ git config --global user.email “takumi.mizoguchi@gmail.com”
-    $ git config --global user.name “yasainet”
-    $ git config --global color.ui auto
+`$ xcode-select --install`
 
+<<<<<<< HEAD
     $ sudo vim /etc/shells
 
     /usr/local/bin/zsh を末尾に追加
 
     $ chpass -s /usr/local/bin/zsh
+=======
+`$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"`
 
-Ricty for Powerlineをインストール
+### git
+`$ brew install git`
 
-    $ brew tap sanemat/font
-    $ brew reinstall --powerline --vim-powerline ricty
-/usr/local/Cellar/ricty/3.2.2/share/fonts/〜にダウンロードされるのでFontBookへD&D
+`$ git config --global user.email “takumi.mizoguchi@gmail.com”`
+>>>>>>> 9f0472cdc130c8ae6cf87b9c0dd6d5b4bb55d22e
 
-「ターミナル」→「環境設定」→「設定」→「テキスト」フォント→「Ricty for Powerline Regular　14pt」
+`$ git config --global user.name “yasainet”`
 
-+luaでvimをインストール
+`$ git config --global color.ui auto`
 
-    $ brew install vim --with-lua
 
-dotfilesをcloneしてくる
+### zsh
 
-    $ git clone https://github.com/yasainet/dotfiles.git ~/dotfiles
-    $ cd dotfiles
-    $ git submodule init
-    $ git submodule update
-    $ ./setup.sh
-    $ vim .vimrc
-    $ exit
+`$ brew install zsh`
 
-    $ login
+`$ sudo vim /etc/shells`
+```
+# List of acceptable shells for chpass(1).
+# Ftpd will not allow users to connect who are not using
+# one of these shells.
+
+/bin/bash
+/bin/csh
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
++ /usr/local/bin/zsh
+```
+
+`$ chpass -s /usr/local/bin/zsh`
+
+### Ricty
+`$ brew tap sanemat/font`
+
+`$ brew reinstall --powerline --vim-powerline ricty`
+
+`$ cp -f /usr/local/Cellar/ricty/3.2.3/share/fonts/Ricty*.ttf ~/Dropbox/Library/Fonts/`
+
+`$ fc-cache -vf`
+
+### vim
+`$ brew install lua`
+
+`$ brew install vim --devel --with-lua`
+
+`$ vim ~/.zshrc`
+```
+export PATH=/usr/local/bin:/usr/bin
+```
+
+`$ source ~/.zshrc`
+
+`$ which vim`
+```
+usr/local/bin/vim
+```
+
+### dotfiles
+`$ git clone https://github.com/yasainet/dotfiles.git ~/dotfiles`
+
+`$ cd dotfiles`
+
+`$ git submodule init`
+
+`$ git submodule update`
+
+`$ ./setup.sh`
+
+`$ vim .vimrc`
+
+`$ exit`
+
+`$ login`
 
 #ubuntu
 

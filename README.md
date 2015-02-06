@@ -1,55 +1,90 @@
-#Mac
+## Mac 
 
-xcode command line tools, homebrewをインストール
+* zsh
+* homebrew
+* vim
+  * ver 7.4
+  * lua
 
-    $ xcode-select --install
-    $ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+### homebrew
 
-coreutils, git, zsh, luaをインストール
+`$ xcode-select --install`
 
-    $ brew install coreutils
-    $ brew install git zsh lua
-    $ git config --global user.email “takumi.mizoguchi@gmail.com”
-    $ git config --global user.name “yasainet”
-    $ git config --global color.ui auto
+`$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"`
 
-    $ sudo vim /etc/shells
-    
-    /usr/local/bin/zsh を末尾に追加
-    
-    $ chpass -s /usr/local/bin/zsh
-    $ git clone https://github.com/seebi/dircolors-solarized.git ~/git/dircolors-solarized
+### git
+`$ brew install git`
 
-terminal.appをsolarized化する
+`$ git config --global user.email “takumi.mizoguchi@gmail.com”`
 
-    $ mkdir git && cd $_
-    $ git clone https://github.com/tomislav/osx-terminal.app-colors-solarized ~/git/solarized.git
-  
-「ターミナル」→「環境設定」→「設定」タブ→下の方のツールマーク→「読み込む」
+`$ git config --global user.name “yasainet”`
 
-Ricty for Powerlineをインストール
+`$ git config --global color.ui auto`
 
-    $ brew tap sanemat/font
-    $ brew reinstall --powerline --vim-powerline ricty
-/usr/local/Cellar/ricty/3.2.2/share/fonts/〜にダウンロードされるのでFontBookへD&D
 
-「ターミナル」→「環境設定」→「設定」→「テキスト」フォント→「Ricty for Powerline Regular　14pt」
+### zsh
 
-+luaでvimをインストール
+`$ brew install zsh`
 
-    $ brew install vim --with-lua
+`$ sudo vim /etc/shells`
+```
+# List of acceptable shells for chpass(1).
+# Ftpd will not allow users to connect who are not using
+# one of these shells.
 
-dotfilesをcloneしてくる
+/bin/bash
+/bin/csh
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
++ /usr/local/bin/zsh
+```
 
-    $ git clone https://github.com/yasainet/dotfiles.git ~/dotfiles
-    $ cd dotfiles
-    $ git submodule init
-    $ git submodule update
-    $ ./setup.sh
-    $ vim .vimrc
-    $ exit
+`$ chpass -s /usr/local/bin/zsh`
 
-    $ login
+### Ricty
+`$ brew tap sanemat/font`
+
+`$ brew install ricty`
+
+`$ cp -f /usr/local/Cellar/ricty/3.2.3/share/fonts/Ricty*.ttf ~/Dropbox/Library/Fonts/`
+
+`$ fc-cache -vf`
+
+### vim
+`$ brew install lua`
+
+`$ brew install vim --devel --with-lua`
+
+`$ vim ~/.zshrc`
+```
+export PATH=/usr/local/bin:/usr/bin
+```
+
+`$ source ~/.zshrc`
+
+`$ which vim`
+```
+usr/local/bin/vim
+```
+
+### dotfiles
+`$ git clone https://github.com/yasainet/dotfiles.git ~/dotfiles`
+
+`$ cd dotfiles`
+
+`$ git submodule init`
+
+`$ git submodule update`
+
+`$ ./setup.sh`
+
+`$ vim .vimrc`
+
+`$ exit`
+
+`$ login`
 
 #ubuntu
 

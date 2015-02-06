@@ -1,10 +1,13 @@
 ## Mac 
 
-* zsh
 * homebrew
+* git
+* zsh
+* Ricty
 * vim
   * ver 7.4
   * lua
+
 
 ### homebrew
 

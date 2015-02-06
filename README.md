@@ -14,18 +14,10 @@ coreutils, git, zsh, luaをインストール
     $ git config --global color.ui auto
 
     $ sudo vim /etc/shells
-    
+
     /usr/local/bin/zsh を末尾に追加
-    
+
     $ chpass -s /usr/local/bin/zsh
-    $ git clone https://github.com/seebi/dircolors-solarized.git ~/git/dircolors-solarized
-
-terminal.appをsolarized化する
-
-    $ mkdir git && cd $_
-    $ git clone https://github.com/tomislav/osx-terminal.app-colors-solarized ~/git/solarized.git
-  
-「ターミナル」→「環境設定」→「設定」タブ→下の方のツールマーク→「読み込む」
 
 Ricty for Powerlineをインストール
 
@@ -77,10 +69,6 @@ zshをインストールする
     $ which zsh
     /usr/bin/zsh
     $ chsh -s /usr/bin/zsh
-
-dircolors-solarized
-
-    $ git clone https://github.com/seebi/dircolors-solarized.git ~/git/dircolors-solarized
 
 dotfilesをcloneしてくる
 

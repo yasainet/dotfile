@@ -160,6 +160,13 @@ NeoBundle 'vim-javascript'
 NeoBundle 'Yggdroot/indentLine'
 let g:indentLine_color_term = 239
 
+" Powerline
+NeoBundle 'alpaca-tc/alpaca_powertabline'
+NeoBundle 'https://github.com/Lokaltog/powerline.git'
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+let g:Powerline_symbols = 'fancy'
+set noshowmode
+
 NeoBundle 'scrooloose/nerdtree'
   nmap <silent> <C-e>      :NERDTreeToggle<CR>
   "vmap <silent> <C-e> <Esc>:NERDTreeToggle<CR>

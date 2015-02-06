@@ -49,7 +49,7 @@
 ### Ricty
 `$ brew tap sanemat/font`
 
-`$ brew install ricty`
+`$ brew reinstall --powerline --vim-powerline ricty`
 
 `$ cp -f /usr/local/Cellar/ricty/3.2.3/share/fonts/Ricty*.ttf ~/Dropbox/Library/Fonts/`
 

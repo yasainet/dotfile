@@ -76,7 +76,7 @@ set number
 " 常にカーソル行を真ん中に
 set scrolloff=999
 " カレント行をハイライト
-" set cursorline
+set cursorline
 " 入力中のコマンドを表示する
 set showcmd
 " Bs で消せるものを指定する

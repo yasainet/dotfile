@@ -1,4 +1,4 @@
-## Mac 
+## Mac
 
 * homebrew
 * git
@@ -13,22 +13,14 @@
 
 `$ xcode-select --install`
 
-<<<<<<< HEAD
-    $ sudo vim /etc/shells
-
-    /usr/local/bin/zsh を末尾に追加
-
-    $ chpass -s /usr/local/bin/zsh
-=======
 `$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"`
 
 ### git
 `$ brew install git`
 
-`$ git config --global user.email “takumi.mizoguchi@gmail.com”`
->>>>>>> 9f0472cdc130c8ae6cf87b9c0dd6d5b4bb55d22e
+`$ git config --global user.email "takumi.mizoguchi@gmail.com”`
 
-`$ git config --global user.name “yasainet”`
+`$ git config --global user.name "yasainet”`
 
 `$ git config --global color.ui auto`
 

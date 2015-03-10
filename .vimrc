@@ -41,10 +41,6 @@ nnoremap <F6> :<C-u>source $MYVIMRC<Enter>
 
 nnoremap <C-g> 1<C-g>
 
-noremap <C-r> :%s/
-cnoremap <C-r> :%s/
-inoremap <C-r> <ESC>:%s/
-
 set pastetoggle=<F10>
 
 autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/

@@ -41,6 +41,9 @@ bindkey "^N" history-beginning-search-forward-end
 # すべてのヒストリを表示する
 function history-all { history -E 1 }
 
+# EDITOR を vim にする
+export EDITOR="/usr/local/bin/vim"
+
 # ------------------------------
 # Look And Feel Settings
 # ------------------------------

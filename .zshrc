@@ -44,6 +44,22 @@ function history-all { history -E 1 }
 # EDITOR を vim にする
 export EDITOR="/usr/local/bin/vim"
 
+# crontab -r を防止する
+crontab()
+{
+  if [[ $1 = -r ]]; then
+    echo -n "crontab: really delete $USER's crontab? (y/n) "
+    typeset answer
+    while :; do
+      read answer
+      [[ $answer = (y|Y) ]] && break
+      [[ $answer = (n|N) ]] && return 0
+      echo -n "Please enter Y or N: "
+    done
+  fi
+  command crontab ${1+"$@"}
+}
+
 # ------------------------------
 # Look And Feel Settings
 # ------------------------------

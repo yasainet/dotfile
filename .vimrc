@@ -38,6 +38,7 @@ nnoremap gk k
 
 nnoremap <F5> :<C-u>edit $MYVIMRC<Enter>
 nnoremap <F6> :<C-u>source $MYVIMRC<Enter>
+nnoremap <F8> :!cat %<Enter>
 
 nnoremap <C-g> 1<C-g>
 
@@ -72,7 +73,7 @@ set number
 " 常にカーソル行を真ん中に
 set scrolloff=999
 " カレント行をハイライト
-set cursorline
+"set cursorline
 " 入力中のコマンドを表示する
 set showcmd
 " Bs で消せるものを指定する
@@ -105,6 +106,24 @@ function! s:remove_dust()
     unlet cursor
 endfunction
 autocmd BufWritePre * call <SID>remove_dust()
+
+"タブ、空白、改行の可視化
+set list
+set listchars=tab:>.,extends:>,precedes:<,nbsp:%
+
+"全角スペースをハイライト表示
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
+endfunction
+
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme       * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+    augroup END
+    call ZenkakuSpace()
+endif
 
 "------ Search ------"
 " インクリメンタルサーチ
@@ -154,13 +173,10 @@ NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'vim-javascript'
 NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'xsbeats/vim-blade'
 let g:indentLine_color_term = 239
 
-" Powerline
-NeoBundle 'alpaca-tc/alpaca_powertabline'
-NeoBundle 'https://github.com/Lokaltog/powerline.git'
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-let g:Powerline_symbols = 'fancy'
 set noshowmode
 
 NeoBundle 'scrooloose/nerdtree'
@@ -258,8 +274,9 @@ endif
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+" filetype plugin indent on
 
 "" ------ ColorScheme ------"
 syntax on
 set background=dark
-colorscheme hybrid
+colorscheme desert

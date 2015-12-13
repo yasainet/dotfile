@@ -46,14 +46,6 @@
 
 `$ chpass -s /usr/local/bin/zsh`
 
-### Ricty
-`$ brew tap sanemat/font`
-
-`$ brew reinstall --powerline --vim-powerline ricty`
-
-`$ cp -f /usr/local/Cellar/ricty/3.2.3/share/fonts/Ricty*.ttf ~/Dropbox/Library/Fonts/`
-
-`$ fc-cache -vf`
 
 ### vim
 `$ brew install lua`

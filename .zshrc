@@ -60,8 +60,8 @@ esac
 
 PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~ %# "
 
-PATH=$PATH:$HOME/.vim/bundle/powerline/scripts
-source $HOME/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
+#PATH=$PATH:$HOME/.vim/bundle/powerline/scripts
+#source $HOME/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
 
 
 # ------------------------------
@@ -106,3 +106,14 @@ ls_abbrev() {
 }
 
 alias ll='ls -la'
+export LESSCHARSET=utf-8
+# rbenv {{{
+rbenv=$HOME/.rbenv/bin
+if [ -d "$rbenv" ]
+then
+  export PATH=$rbenv:$PATH
+  eval "$(rbenv init - zsh)"
+fi # }}}
+export PATH=$GOPATH/bin:$PATH
+
+#export LS_COLORS='di=01;36:ln=01;35:ex=01;32'

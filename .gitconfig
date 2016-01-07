@@ -10,4 +10,8 @@
     b = branch
     c = commit
     a = add
-    p = add
+    p = push
+    f = fetch
+    m = merge
+[core]
+  editor = /usr/bin/vim

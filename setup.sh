@@ -1,5 +1,5 @@
 #!/bin/bash
-for dotfile in .vim .vimrc .zshrc
+for dotfile in .vim .vimrc .zshrc .tmux.conf .gitconfig
 do
   rm -fr ~/$dotfile
   #ln -vnfs $PWD/$dotfile ~/$dotfile

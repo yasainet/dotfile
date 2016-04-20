@@ -1,127 +1,84 @@
-# ------------------------------
-# General Settings
-# ------------------------------
-export LANG=ja_JP.UTF-8  # 文字コードをUTF-8に設定
-export KCODE=u           # KCODEにUTF-8を設定
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/dotfiles/oh-my-zsh
 
-### Complement ###
-autoload -U compinit; compinit # 補完機能を有効にする
-setopt auto_list               # 補完候補を一覧で表示する(d)
-setopt auto_menu               # 補完キー連打で補完候補を順に表示する(d)
-setopt auto_param_slash        # ディレクトリ名の補完で末尾の / を自動的に付加
-setopt mark_dirs               # ファイル名の展開でディレクトリにマッチした場合 末尾に / を付加
-setopt list_types              # 補完候補一覧でファイルの種別を識別マーク表示
-setopt complete_in_word        # 語の途中でもカーソル位置で補完
-setopt always_last_prompt      # カーソル位置は保持したままファイル名一覧を順次その場で表示
-setopt list_packed             # 補完候補をできるだけ詰めて表示する
-setopt list_types              # 補完候補にファイルの種類も表示する
-setopt globdots                # 明確なドットの指定なしで.から始まるファイルをマッチ
-bindkey "^[[Z" reverse-menu-complete  # Shift-Tabで補完候補を逆順する("\e[Z"でも動作する)
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字小文字を区別しない
-zstyle ':completion:*' verbose yes
-zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="Soliah"
 
-### History ###
-HISTFILE=~/.zsh_history   # ヒストリを保存するファイル
-HISTSIZE=10000            # メモリに保存されるヒストリの件数
-SAVEHIST=10000            # 保存されるヒストリの件数
-setopt bang_hist          # !を使ったヒストリ展開を行う(d)
-setopt extended_history   # ヒストリに実行時間も保存する
-setopt hist_ignore_dups   # 直前と同じコマンドはヒストリに追加しない
-setopt share_history      # 他のシェルのヒストリをリアルタイムで共有する
-setopt hist_reduce_blanks # 余分なスペースを削除してヒストリに保存する
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# マッチしたコマンドのヒストリを表示できるようにする
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-# すべてのヒストリを表示する
-function history-all { history -E 1 }
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-# EDITOR を vim にする
-export EDITOR="/usr/local/bin/vim"
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
-# crontab -r を防止する
-crontab()
-{
-  if [[ $1 = -r ]]; then
-    echo -n "crontab: really delete $USER's crontab? (y/n) "
-    typeset answer
-    while :; do
-      read answer
-      [[ $answer = (y|Y) ]] && break
-      [[ $answer = (n|N) ]] && return 0
-      echo -n "Please enter Y or N: "
-    done
-  fi
-  command crontab ${1+"$@"}
-}
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-# ------------------------------
-# Look And Feel Settings
-# ------------------------------
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-case "${OSTYPE}" in
-darwin*)
-  alias ls="ls -G"
-  alias ll="ls -lG"
-  alias la="ls -laG"
-  ;;
-linux*)
-  alias ls='ls --color'
-  alias ll='ls -l --color'
-  alias la='ls -la --color'
-  ;;
-esac
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~ %# "
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
 
-PATH=$PATH:$HOME/.vim/bundle/powerline/scripts
-source $HOME/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
 
-# ------------------------------
-# Alias
-# ------------------------------
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
-# cd->ls
-chpwd() {
-    ls_abbrev
-}
-ls_abbrev() {
-    # -a : Do not ignore entries starting with ..
-    # -C : Force multi-column output.
-    # -F : Append indicator (one of */=>@|) to entries.
-    local cmd_ls='ls'
-    local -a opt_ls
-    opt_ls=('-aCF' '--color=always')
-    case "${OSTYPE}" in
-        freebsd*|darwin*)
-            if type gls > /dev/null 2>&1; then
-                cmd_ls='gls'
-            else
-                # -G : Enable colorized output.
-                opt_ls=('-aCFG')
-            fi
-            ;;
-    esac
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
 
-    local ls_result
-    ls_result=$(CLICOLOR_FORCE=1 COLUMNS=$COLUMNS command $cmd_ls ${opt_ls[@]} | sed $'/^\e\[[0-9;]*m$/d')
+# User configuration
 
-    local ls_lines=$(echo "$ls_result" | wc -l | tr -d ' ')
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export MANPATH="/usr/local/man:$MANPATH"
 
-    if [ $ls_lines -gt 10 ]; then
-        echo "$ls_result" | head -n 5
-        echo '...'
-        echo "$ls_result" | tail -n 5
-        echo "$(command ls -1 -A | wc -l | tr -d ' ') files exist"
-    else
-        echo "$ls_result"
-    fi
-}
+source $ZSH/oh-my-zsh.sh
 
-alias ll='ls -la'
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"

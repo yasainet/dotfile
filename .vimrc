@@ -14,7 +14,6 @@ elseif has('win32')
   set termencoding=
 endif
 set laststatus=2
-set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v,%l)/%L%8P\
 
 "------ keymap ------"
 inoremap <C-c> <ESC>
@@ -145,27 +144,13 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
 
-" NeoBundle 'Shougo/neosnippet.vim'
-" NeoBundle 'Shougo/neosnippet-snippets'
-" NeoBundle 'tpope/vim-fugitive'
-" NeoBundle 'kien/ctrlp.vim'
-" NeoBundle 'flazz/vim-colorschemes'
-
-" NeoBundle 'mattn/benchvimrc-vim'
 NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'mattn/emmet-vim'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'vim-javascript'
-NeoBundle 'Yggdroot/indentLine'
-let g:indentLine_color_term = 239
 
-" Powerline
-NeoBundle 'alpaca-tc/alpaca_powertabline'
-NeoBundle 'https://github.com/Lokaltog/powerline.git'
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-let g:Powerline_symbols = 'fancy'
-set noshowmode
+NeoBundle 'vim-airline/vim-airline'
+let g:airline_powerline_fonts = 1
 
 NeoBundle 'scrooloose/nerdtree'
   nmap <silent> <C-e>      :NERDTreeToggle<CR>

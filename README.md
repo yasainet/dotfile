@@ -1,3 +1,16 @@
+# Mac
+
+## font
+
+`wget https://github.com/powerline/fonts/tree/master/SourceCodePro`
+
+add Fontbook.app
+
+## Terminal.app Settings
+
+1. Profile
+2. add materialshell-dark.terminal
+
 # ubuntu
 
 ## apt-get & git config
@@ -28,8 +41,10 @@
     $ git submodule init
     $ git submodule update
     $ ./setup.sh
+
     $ vim .vimrc
-    `NeoBundleInstall`
+    :NeoBundleInstall
+
     $ /var/tmp
     $ git clone https://github.com/carloscuesta/materialshell.git
     $ cd materialshell

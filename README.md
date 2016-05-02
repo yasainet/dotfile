@@ -34,6 +34,10 @@ add Fontbook.app
     /usr/bin/zsh
     $ chsh -s /usr/bin/zsh
 
+## install tmux
+
+    $ sudo apt-get install tmux
+
 ## clone dotfiles & settings
 
     $ git clone https://github.com/yasainet/dotfiles.git ~/dotfiles

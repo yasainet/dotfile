@@ -45,8 +45,8 @@ add Fontbook.app
     $ vim .vimrc
     :NeoBundleInstall
 
-    $ /var/tmp
+    $ cd /var/tmp
     $ git clone https://github.com/carloscuesta/materialshell.git
-    $ cd materialshell
+    $ cd materialshell/zsh
     $ cp -rp * ~/dotfiles/oh-my-zsh/themes/
     $ cd && source .zshrc

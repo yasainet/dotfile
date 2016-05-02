@@ -10,3 +10,9 @@ alias ll='ls -al'
 # cd -> ls -la
 setopt auto_cd
 function chpwd() { ls -la}
+
+# rbenv Settings
+# https://gorails.com/setup/ubuntu/14.04
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.zshrc

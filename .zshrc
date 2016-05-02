@@ -85,5 +85,11 @@ source $ZSH/oh-my-zsh.sh
 
 ## My Settings
 
-source $HOME/dotfiles/.zshrc.org
+source $HOME/dotfiles/.zshrc.mine
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"

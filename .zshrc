@@ -5,7 +5,7 @@ export ZSH=$HOME/dotfiles/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="xxf"
+ZSH_THEME="materialshelldark"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -82,3 +82,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+## My Settings
+
+source $HOME/.dotfiles/.zshrc.org
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local

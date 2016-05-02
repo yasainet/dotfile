@@ -144,7 +144,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
 
-NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'kristijanhusak/vim-hybrid-material'
+NeoBundle 'vim-airline/vim-airline'
+
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'vim-javascript'
@@ -251,4 +253,5 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "" ------ ColorScheme ------"
 syntax on
 set background=dark
-colorscheme hybrid
+colorscheme hybrid_material
+let g:enable_bold_font = 1

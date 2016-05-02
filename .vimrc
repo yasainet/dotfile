@@ -146,6 +146,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'kristijanhusak/vim-hybrid-material'
 NeoBundle 'vim-airline/vim-airline'
+let g:airline_powerline_fonts = 1
 
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
@@ -154,9 +155,6 @@ NeoBundle 'tpope/vim-rails'
 
 " @TODO
 " NeoBundle 'vim-endwise'
-
-NeoBundle 'vim-airline/vim-airline'
-let g:airline_powerline_fonts = 1
 
 NeoBundle 'scrooloose/nerdtree'
   nmap <silent> <C-e>      :NERDTreeToggle<CR>

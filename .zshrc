@@ -85,5 +85,5 @@ source $ZSH/oh-my-zsh.sh
 
 ## My Settings
 
-source $HOME/.dotfiles/.zshrc.org
+source $HOME/dotfiles/.zshrc.org
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local

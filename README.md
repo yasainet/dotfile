@@ -17,6 +17,7 @@ add Fontbook.app
 
 `$ brew install vim`
 
+
 ## zsh
 
 `$ brew install zsh`
@@ -64,3 +65,4 @@ add Fontbook.app
     $ cd materialshell/zsh
     $ cp -rp * ~/dotfiles/oh-my-zsh/themes/
     $ cd && source .zshrc
+

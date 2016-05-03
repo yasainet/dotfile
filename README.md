@@ -11,6 +11,16 @@ add Fontbook.app
 1. Profile
 2. add materialshell-dark.terminal
 
+## brew
+
+## vim
+
+`$ brew install vim`
+
+## zsh
+
+`$ brew install zsh`
+
 # ubuntu
 
 ## apt-get & git config

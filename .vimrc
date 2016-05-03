@@ -148,7 +148,7 @@ NeoBundle 'kristijanhusak/vim-hybrid-material'
 NeoBundle 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
 
-NeoBundle 'taichouchou2/html5.vim'
+NeoBundle 'othree/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'vim-javascript'
 NeoBundle 'tpope/vim-rails'

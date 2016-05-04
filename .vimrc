@@ -146,7 +146,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'kristijanhusak/vim-hybrid-material'
 NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
+let g:airline_theme = 'hybrid'
 let g:airline_powerline_fonts = 1
+NeoBundle 'edkolev/tmuxline.vim'
 
 NeoBundle 'othree/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
@@ -154,7 +157,7 @@ NeoBundle 'vim-javascript'
 NeoBundle 'tpope/vim-rails'
 
 " Markdown
-" NeoBundle "rcmdnk/vim-markdown"
+" NeoBundle 'rcmdnk/vim-markdown'
 " NeoBundle 'kannokanno/previm'
 " NeoBundle 'tyru/open-browser.vim'
 "

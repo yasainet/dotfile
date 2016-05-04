@@ -150,6 +150,15 @@ NeoBundle 'vim-airline/vim-airline-themes'
 let g:airline_theme = 'hybrid'
 let g:airline_powerline_fonts = 1
 NeoBundle 'edkolev/tmuxline.vim'
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : '#W',
+      \'c'    : '#H',
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'x'    : '%a',
+      \'y'    : '#W %R',
+      \'z'    : '#H'}
 
 NeoBundle 'othree/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'

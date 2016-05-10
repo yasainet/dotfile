@@ -164,6 +164,10 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'vim-javascript'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'thinca/vim-quickrun'
+set splitright
+let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
+nnoremap <Leader>q :<C-u>bw! \[quickrun\ output\]<CR>
 
 " Markdown
 " NeoBundle 'rcmdnk/vim-markdown'

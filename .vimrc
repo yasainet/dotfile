@@ -173,15 +173,8 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/unite.vim'
-
-" Markdown
-" NeoBundle 'rcmdnk/vim-markdown'
-" NeoBundle 'kannokanno/previm'
-" NeoBundle 'tyru/open-browser.vim'
-"
-" let g:vim_markdown_folding_disabled=1
-" au BufRead,BufNewFile *.md set filetype=markdown
-" let g:previm_open_cmd = 'google-chrome'
+NeoBundle 'dhruvasagar/vim-table-mode'
+let g:table_mode_corner="|"
 
 NeoBundle 'scrooloose/nerdtree'
   nmap <silent> <C-e>      :NERDTreeToggle<CR>
